@@ -14,6 +14,10 @@ export class UsersService {
   }
 
   async findOne(id: number): Promise<User | null> {
+    if (!id) {
+      return null;
+    }
+
     return this.repository.findOneBy({ id });
   }
 

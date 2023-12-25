@@ -43,6 +43,16 @@ export class UsersController {
     return user;
   }
 
+  @Post('/signout')
+  async signOut(@Session() session: any) {
+    session.userId = null;
+  }
+
+  @Get('/whoami')
+  async whoAmI(@Session() session: any) {
+    return this.usersService.findOne(session.userId);
+  }
+
   @Get('/:id')
   async getUserById(@Param('id', ParseIntPipe) id: number) {
     return this.usersService.getUser(id);
