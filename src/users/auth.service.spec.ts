@@ -13,7 +13,7 @@ describe('AuthService', () => {
 
     fakeUsersService = {
       findByEmail: (email: string) => {
-        const user = users.find((user) => user.email === email);
+        const user = users.find((u) => u.email === email);
 
         return Promise.resolve(user || null);
       },
