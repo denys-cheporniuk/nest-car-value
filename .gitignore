@@ -39,3 +39,4 @@ test.sqlite
 # env files
 .env.test
 .env.development
+.env.production
