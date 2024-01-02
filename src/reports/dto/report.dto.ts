@@ -8,6 +8,9 @@ export class ReportDto {
   price: number;
 
   @Expose()
+  approved: boolean;
+
+  @Expose()
   make: string;
 
   @Expose()
